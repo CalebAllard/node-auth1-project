@@ -4,11 +4,11 @@ exports.up = function(knex) {
     .createTable('users', tbl => {
         tbl.increments();
         tbl.text('username');
-        tbl.charset('password');
+        tbl.text('password');
         tbl.text('email');
     });
 };
 
 exports.down = function(knex) {
-  
+  return knex.schema.dropTableIfExistsnp('users');
 };
